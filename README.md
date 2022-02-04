@@ -28,7 +28,7 @@
 <details>
     <summary><strong>Avaliação 1</strong></summary>
     <br />
-    <div align="left">
+    <div align="center">
         <table border=1>
             <tr>
                 <th>Questão</th>

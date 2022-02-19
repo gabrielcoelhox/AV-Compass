@@ -79,7 +79,7 @@
             <tr>
                 <td align="center">10</td>
                 <td>Emoji divertido e chateado</td>
-                <td><a href="https://github.com/gabrielcoelhox/AV-Compass/blob/main/Avaliação%202/Questao10/src/Questao10/Program.java">Código</a></td>
+                <td><a href="https://github.com/gabrielcoelhox/AV-Compass/blob/main/Avaliação%202/Questao10/src/Program.java">Código</a></td>
                 <td align="center">✔️</td>
             </tr>
         </table>

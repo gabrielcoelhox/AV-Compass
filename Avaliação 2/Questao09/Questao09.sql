@@ -18,5 +18,5 @@ INSERT INTO produtos (Nome, descricao, valor, desconto, DataInicio) VALUES
   ('Suporte para notebook','Suporte dobrável de alumínio ajustável', '50', '3','2021-11-30'),
   ('Bola de futsal','Bola Topper Slik II', '60','5', '2022-02-03'),
   ('Mochila Dell', 'Mochila Pro Transporta Notebook 15.6"', '200', '0', '2022-02-19'),
-  ('Placa Mãe', 'Gigabyte Z390 Gaming', '1049', '0', '2022-02-15');
-
+  ('Placa Mãe', 'Gigabyte Z390 Gaming', '1049', '0', '2022-02-15'),
+  ('Case notebook pocket', 'Notebook até 14 polegadas', '55', '0', '2022-02-18');

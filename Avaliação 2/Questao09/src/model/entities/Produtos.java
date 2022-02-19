@@ -95,6 +95,7 @@ public class Produtos implements Serializable {
 	public String toString() {
 		return "Id = " + id + ", nome = " + nome + 
 				", descricao = " + descricao +
-				", valor = R$" + valor;
+				", valor = R$" + valor +
+				", desconto = " + desconto + "%";
 	}
 }

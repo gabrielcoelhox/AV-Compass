@@ -71,6 +71,19 @@ public class Program {
 				System.out.print("\nNovo nome do produto: ");
 				String novoNomeProduto = sc.nextLine();
 				produto.setNome(novoNomeProduto);
+				
+				System.out.print("\nNova descricao: ");
+				String novaDescricao = sc.nextLine();
+				produto.setDescricao(novaDescricao);
+				
+				System.out.print("\nNovo valor: ");
+				Double novoValor = sc.nextDouble();
+				produto.setValor(novoValor);
+				
+				System.out.print("\nValor do desconto: ");
+				Double novoDesconto = sc.nextDouble();
+				produto.setDesconto(novoDesconto);
+				
 				produtosDao.update(produto);
 				
 				System.out.println("Feito!");

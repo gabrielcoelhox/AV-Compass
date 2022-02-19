@@ -118,6 +118,7 @@ public class ProdutosDaoJDBC implements ProdutosDao {
 				obj.setNome(result.getString("Nome"));
 				obj.setDescricao(result.getString("descricao"));
 				obj.setValor(result.getDouble("valor"));
+				obj.setDesconto(result.getDouble("desconto"));
 				list.add(obj);
 			}
 			return list;

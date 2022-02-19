@@ -51,8 +51,8 @@
             <tr>
                 <td align="center">9</td>
                 <td>Salário funcionário</td>
-                <td><a href="https://github.com/gabrielcoelhox/AV-Compass/blob/main/Avaliação%201/Questão%2009/src/application/Questao09.java">Código</a></td>
-                <td align="center">✔️</td>
+                <td>Código</td>
+                <td align="center">⚠️</td>
             </tr>
         </table>
     </div>

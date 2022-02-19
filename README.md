@@ -70,10 +70,10 @@
                 <th>Solução</th>
                 <th>Status</th>
             </tr>
-            <tr>
+             <tr>
                 <td align="center">9</td>
                 <td>XPTO System</td>
-                <td><a href="">Código</a></td>
+                <td><a href="https://github.com/gabrielcoelhox/AV-Compass/tree/main/Avaliação%202/Questao09">Código</a></td>
                 <td align="center">✔️</td>
             </tr>
             <tr>

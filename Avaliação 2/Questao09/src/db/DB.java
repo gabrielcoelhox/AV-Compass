@@ -12,58 +12,62 @@ import java.util.Properties;
 public class DB {
 
 	private static Connection conn = null;
-	
+
+	// Estabelecer uma conexão
 	public static Connection getConnection() {
 		if (conn == null) {
 			try {
 				Properties props = loadProperties();
-				String url = props.getProperty("dburl");
-				conn = DriverManager.getConnection(url, props);
-			}
-			catch (SQLException e) {
-				throw new DbException(e.getMessage());
+				String url = props.getProperty("dburl");        // url estabelecida no db.properties
+				conn = DriverManager.getConnection(url, props); // variável conn recebe a url do banco e suas
+																// propiedades
+			} catch (SQLException ex) {
+				throw new DbException(ex.getMessage());
 			}
 		}
 		return conn;
 	}
-	
-	public static void closeConnection() {
+
+	// Fechar uma conexão
+	public static void fechaConexao() {
 		if (conn != null) {
 			try {
 				conn.close();
-			} catch (SQLException e) {
-				throw new DbException(e.getMessage());
-			}
-		}
-	}
-	
-	private static Properties loadProperties() {
-		try (FileInputStream fs = new FileInputStream("db.properties")) {
-			Properties props = new Properties();
-			props.load(fs);
-			return props;
-		}
-		catch (IOException e) {
-			throw new DbException(e.getMessage());
-		}
-	}
-	
-	public static void closeStatement(Statement st) {
-		if (st != null) {
-			try {
-				st.close();
-			} catch (SQLException e) {
-				throw new DbException(e.getMessage());
+			} catch (SQLException ex) {
+				throw new DbException(ex.getMessage());
 			}
 		}
 	}
 
-	public static void closeResultSet(ResultSet rs) {
-		if (rs != null) {
+	// Abrir o arquivo db.properties, ler os dados e guardar no objeto Properties
+	private static Properties loadProperties() {
+		try (FileInputStream fis = new FileInputStream("db.properties")) {
+			Properties props = new Properties();
+			props.load(fis);     // Leitura do arquivo db.properties e guarda os dados dentro de props
+			return props;
+		} catch (IOException ex) {
+			throw new DbException(ex.getMessage());
+		}
+	}
+
+	// Tratar o close da variável stat
+	public static void fechaStatement(Statement stat) {
+		if (stat != null) {
 			try {
-				rs.close();
-			} catch (SQLException e) {
-				throw new DbException(e.getMessage());
+				stat.close();
+			} catch (SQLException ex) {
+				throw new DbException(ex.getMessage());
+			}
+		}
+	}
+
+	// Tratar o close da variável res
+	public static void fechaResultSet(ResultSet res) {
+		if (res != null) {
+			try {
+				res.close();
+			} catch (SQLException ex) {
+				throw new DbException(ex.getMessage());
 			}
 		}
 	}

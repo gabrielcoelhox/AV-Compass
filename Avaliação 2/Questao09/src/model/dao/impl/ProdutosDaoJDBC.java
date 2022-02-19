@@ -22,6 +22,7 @@ public class ProdutosDaoJDBC implements ProdutosDao {
 		this.conn = conn;
 	}
 
+	// UPDATE
 	@Override
 	public void update(Produtos obj) {
 		PreparedStatement pst = null;
@@ -43,10 +44,11 @@ public class ProdutosDaoJDBC implements ProdutosDao {
 		} catch (SQLException ex) {
 			throw new DbException(ex.getMessage());
 		} finally {
-			DB.closeStatement(pst);
+			DB.fechaStatement(pst);
 		}
 	}
 
+	// DELETE BY ID
 	@Override
 	public void deleteById(Integer id) {
 		PreparedStatement pst = null;
@@ -61,10 +63,11 @@ public class ProdutosDaoJDBC implements ProdutosDao {
 		} catch (SQLException ex) {
 			throw new DbException(ex.getMessage());
 		} finally {
-			DB.closeStatement(pst);
+			DB.fechaStatement(pst);
 		}
 	}
 
+	// FIND BY ID
 	@Override
 	public Produtos findById(Integer id) throws NullPointerException{
 		PreparedStatement pst = null;
@@ -91,12 +94,13 @@ public class ProdutosDaoJDBC implements ProdutosDao {
 		} catch (SQLException ex) {
 			throw new DbException(ex.getMessage());
 		} finally {
-			DB.closeStatement(pst);
-			DB.closeResultSet(result);
+			DB.fechaStatement(pst);
+			DB.fechaResultSet(result);
 		}
 
 	}
 
+	// FIND ALL
 	@Override
 	public List<Produtos> findAll() {
 		PreparedStatement pst = null;
@@ -121,11 +125,12 @@ public class ProdutosDaoJDBC implements ProdutosDao {
 		} catch (SQLException ex) {
 			throw new DbException(ex.getMessage());
 		} finally {
-			DB.closeStatement(pst);
-			DB.closeResultSet(result);
+			DB.fechaStatement(pst);
+			DB.fechaResultSet(result);
 		}
 	}
 	
+	// FIND BY NAME
 	@Override
 	public List<Produtos> findByName(String nome) {
 		PreparedStatement pst = null;
@@ -153,11 +158,12 @@ public class ProdutosDaoJDBC implements ProdutosDao {
 		} catch (SQLException ex) {
 			throw new DbException(ex.getMessage());
 		} finally {
-			DB.closeStatement(pst);
-			DB.closeResultSet(result);
+			DB.fechaStatement(pst);
+			DB.fechaResultSet(result);
 		}
 	}
 
+	// INSERT
 	@Override
 	public void insert(Produtos obj) {
 		PreparedStatement pst = null;
@@ -184,15 +190,14 @@ public class ProdutosDaoJDBC implements ProdutosDao {
 					int id = result.getInt(1);
 					obj.setId(id);
 				}
-				DB.closeResultSet(result);
+				DB.fechaResultSet(result);
 			} else { // Caso nenhuma linha tenha sido alterada
 				throw new DbException("Erro inesperado. Nenhum dado alterado!");
 			}
 		} catch (SQLException ex) {
 			throw new DbException(ex.getMessage());
 		} finally {
-			DB.closeStatement(pst);
+			DB.fechaStatement(pst);
 		}
-
 	}
 }

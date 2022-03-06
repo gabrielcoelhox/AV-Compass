@@ -1,0 +1,16 @@
+package uol.compass.avaliacao.repository;
+
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import uol.compass.avaliacao.model.Regioes;
+import uol.compass.avaliacao.model.States;
+
+public interface StatesRepository extends JpaRepository<States, Long> {
+
+	List<States> findByRegiao(Regioes regiao, Pageable paginacao);
+
+}

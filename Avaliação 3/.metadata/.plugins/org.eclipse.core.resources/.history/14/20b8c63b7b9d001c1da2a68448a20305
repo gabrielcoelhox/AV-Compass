@@ -1,0 +1,108 @@
+package uol.compass.avaliacao.controller;
+
+import java.net.URI;
+import java.util.Optional;
+
+import javax.transaction.Transactional;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import uol.compass.avaliacao.controller.dto.StatesDto;
+import uol.compass.avaliacao.controller.form.AtualizacaoEstadoForm;
+import uol.compass.avaliacao.controller.form.AtualizacaoStates;
+import uol.compass.avaliacao.controller.form.EstadoForm;
+import uol.compass.avaliacao.model.Regioes;
+import uol.compass.avaliacao.model.States;
+import uol.compass.avaliacao.repository.StatesRepository;
+
+@RestController
+@RequestMapping("/api/states")
+public class StatesController {
+
+	@Autowired
+	private StatesRepository statesRespository;
+
+	@GetMapping
+	public Page<StatesDto> getAll(@RequestParam(required = false) String regiao,
+			@PageableDefault(sort = "id", direction = Direction.ASC) Pageable paginacao) {
+
+		if (regiao == null) {
+			Page<States> states = statesRespository.findAll(paginacao);
+			return StatesDto.converter(states);
+		} else {
+			Page<States> states = statesRespository.findByRegiao(Regioes.valueOf(regiao), paginacao);
+			return StatesDto.converter(states);
+		}
+	}
+
+//	@PostMapping
+//	@Transactional
+//	public ResponseEntity<StatesDto> insert(@RequestBody @Valid EstadoForm estadoForm,
+//			UriComponentsBuilder uriBuilder) {
+//		States state = estadoForm.converter();
+//		statesRespository.save(state);
+//
+//		URI uri = uriBuilder.path("/api/states/{id}").buildAndExpand(state.getId()).toUri();
+//		return ResponseEntity.created(uri).body(new StatesDto(state));
+//	}
+	
+	@PostMapping
+	@Transactional
+	public ResponseEntity<States> insert(@RequestBody States states) {
+		statesRepository.save(states);
+		return new ResponseEntity<>(states, HttpStatus.OK);
+	}
+
+	@GetMapping("/{id}")
+	public ResponseEntity<StatesDto> getById(@PathVariable Long id) {
+		Optional<States> optional = statesRespository.findById(id);
+
+		if (optional.isPresent()) {
+			return ResponseEntity.ok(new StatesDto(optional.get()));
+		}
+
+		return ResponseEntity.notFound().build();
+	}
+
+	// ATUALIZAR
+	@PutMapping("/{id}")
+	@Transactional
+	public ResponseEntity<StatesDto> update(@PathVariable Long id, @RequestBody AtualizacaoStates form) {
+		Optional<States> optional = statesRespository.findById(id);
+		if (optional.isPresent()) {
+			States state = form.atualizar(id, statesRespository);
+			return ResponseEntity.ok(new StatesDto(state));
+		}
+
+		return ResponseEntity.notFound().build();
+	}
+
+	// DELETAR
+	@DeleteMapping("/{id}")
+	@Transactional
+	public ResponseEntity<?> delete(@PathVariable long id) {
+		Optional<States> optional = statesRespository.findById(id);
+		if (optional.isPresent()) {
+			statesRespository.deleteById(id);
+			return ResponseEntity.ok().build();
+		}
+		return ResponseEntity.notFound().build();
+	}
+
+}

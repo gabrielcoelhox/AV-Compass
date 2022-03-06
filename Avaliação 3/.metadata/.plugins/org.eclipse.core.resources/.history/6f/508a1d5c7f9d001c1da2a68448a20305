@@ -1,0 +1,5 @@
+package uol.compass.avaliacao.model;
+
+public enum Regioes {
+
+}

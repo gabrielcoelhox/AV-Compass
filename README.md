@@ -1,4 +1,4 @@
-<p align="center"><strong>💻 Atualizado em 19 de Fevereiro de 2022 💻</strong></p>
+<p align="center"><strong>💻 Atualizado em 06 de Março de 2022 💻</strong></p>
 
 <h1 align="center">Avaliações Compass</h1>
 
@@ -81,6 +81,28 @@
                 <td>Emoji divertido e chateado</td>
                 <td><a href="https://github.com/gabrielcoelhox/AV-Compass/blob/main/Avaliação%202/Questao10/src/Program.java">Código</a></td>
                 <td align="center">✔️</td>
+            </tr>
+        </table>
+    </div>
+</details>
+
+<!-- Avaliação 3 -->
+<details>
+    <summary><strong>Avaliação 3</strong></summary>
+    <br />
+    <div align="center">
+        <table border=1>
+            <tr>
+                <th>Questão</th>
+                <th>Desafio</th>
+                <th>Solução</th>
+                <th>Status</th>
+            </tr>
+             <tr>
+                <td align="center">1</td>
+                <td>API REST</td>
+                <td><a href="https://github.com/gabrielcoelhox/AV-Compass/tree/main/Avalia%C3%A7%C3%A3o%203">Código</a></td>
+                <td align="center">⚠️</td>
             </tr>
         </table>
     </div>

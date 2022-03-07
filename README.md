@@ -102,7 +102,7 @@
                 <td align="center">1</td>
                 <td>API REST</td>
                 <td><a href="https://github.com/gabrielcoelhox/AV-Compass/tree/main/Avalia%C3%A7%C3%A3o%203">Código</a></td>
-                <td align="center">⚠️</td>
+                <td align="center">✔️</td>
             </tr>
         </table>
     </div>

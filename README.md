@@ -107,3 +107,25 @@
         </table>
     </div>
 </details>
+
+<!-- Avaliação 4 -->
+<details>
+    <summary><strong>Avaliação 4</strong></summary>
+    <br />
+    <div align="center">
+        <table border=1>
+            <tr>
+                <th>Questão</th>
+                <th>Desafio</th>
+                <th>Solução</th>
+                <th>Status</th>
+            </tr>
+             <tr>
+                <td align="center">1</td>
+                <td>API REST</td>
+                <td><a href="https://github.com/gabrielcoelhox/AV-Compass/tree/main/Avaliação%204">Código</a></td>
+                <td align="center">✔️</td>
+            </tr>
+        </table>
+    </div>
+</details>

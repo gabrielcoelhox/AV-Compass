@@ -1,4 +1,4 @@
-<p align="center"><strong>💻 Atualizado em 06 de Março de 2022 💻</strong></p>
+<p align="center"><strong>💻 Atualizado em 20 de Março de 2022 💻</strong></p>
 
 <h1 align="center">Avaliações Compass</h1>
 

@@ -74,7 +74,7 @@ public class PoliticalPartyServiceTest {
 
 		when(this.repository.findById(anyLong())).thenReturn(Optional.of(partido));
 
-		PoliticalPartyDTO partyDto = this.politicalService.findById(1L);
+		PoliticalPartyDTO partyDto = this.politicalService.findById(3L);
 
 		assertThat(partyDto.getId()).isNotNull();
 		assertThat(partyDto.getName()).isEqualTo(partido.getName());
@@ -90,7 +90,7 @@ public class PoliticalPartyServiceTest {
 
 		when(this.repository.findById(anyLong())).thenReturn(Optional.of(partido));
 
-		PoliticalPartyWithAssociatesDTO partyDto = this.politicalService.findByIdWithAssociates(1L);
+		PoliticalPartyWithAssociatesDTO partyDto = this.politicalService.findByIdWithAssociates(3L);
 
 		assertThat(partyDto.getId()).isNotNull();
 		assertThat(partyDto.getName()).isEqualTo(partido.getName());
@@ -119,7 +119,7 @@ public class PoliticalPartyServiceTest {
 	public void deveriaAtualizarUmPartido() {
 		PoliticalParty partido = PoliticalPartyBuilder.getPoliticalParty();
 		PoliticalPartyFormDTO partyFormDto = PoliticalPartyBuilder.getPoliticalPartyFormDTO();
-		partyFormDto.setName("PODEMOS");
+		partyFormDto.setName("PROGRESSISTAS");
 		partyFormDto.setIdeology(Ideology.Direita);
 
 		when(this.repository.findById(anyLong())).thenReturn(Optional.of(partido));
@@ -139,7 +139,7 @@ public class PoliticalPartyServiceTest {
 		when(this.repository.findById(anyLong())).thenReturn(Optional.empty());
 		
 		assertThatExceptionOfType(DefaultException.class)
-		.isThrownBy(() -> this.politicalService.update(1L, PoliticalPartyBuilder.getPoliticalPartyFormDTO()));
+		.isThrownBy(() -> this.politicalService.update(3L, PoliticalPartyBuilder.getPoliticalPartyFormDTO()));
 	}
 	
 	@Test
@@ -148,7 +148,7 @@ public class PoliticalPartyServiceTest {
 		
 		when(this.repository.findById(anyLong())).thenReturn(Optional.of(partido));
 		
-		this.politicalService.deleteById(1L);
+		this.politicalService.deleteById(3L);
 		
 		verify(this.repository, times(1)).delete(partido);
 	}
@@ -164,7 +164,7 @@ public class PoliticalPartyServiceTest {
 		doThrow(new DefaultException()).when(this.repository).delete(any(PoliticalParty.class));
 		
 		assertThatExceptionOfType(DefaultException.class)
-		.isThrownBy(() -> this.politicalService.deleteById(1L));
+		.isThrownBy(() -> this.politicalService.deleteById(3L));
 	}
 	
 	@Test
@@ -172,7 +172,7 @@ public class PoliticalPartyServiceTest {
 		when(this.repository.findById(anyLong())).thenReturn(Optional.empty());
 		
 		assertThatExceptionOfType(DefaultException.class)
-		.isThrownBy(() -> this.politicalService.deleteById(1L));
+		.isThrownBy(() -> this.politicalService.deleteById(3L));
 	}
 
 }

@@ -2,11 +2,11 @@ package uol.compass.avaliacao.builder;
 
 import java.time.LocalDate;
 
-import uol.compass.avaliacao.config.dto.PoliticalPartyDTO;
-import uol.compass.avaliacao.config.dto.PoliticalPartyFormDTO;
-import uol.compass.avaliacao.config.dto.PoliticalPartyWithAssociatesDTO;
-import uol.compass.avaliacao.config.entities.PoliticalParty;
-import uol.compass.avaliacao.config.enums.Ideology;
+import uol.compass.avaliacao.dto.PoliticalPartyDTO;
+import uol.compass.avaliacao.dto.PoliticalPartyFormDTO;
+import uol.compass.avaliacao.dto.PoliticalPartyWithAssociatesDTO;
+import uol.compass.avaliacao.entities.PoliticalParty;
+import uol.compass.avaliacao.enums.Ideology;
 
 public class PoliticalPartyBuilder {
 

@@ -22,15 +22,14 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import uol.compass.avaliacao.builder.AssociateBuilder;
 import uol.compass.avaliacao.builder.PoliticalPartyBuilder;
-import uol.compass.avaliacao.config.dto.PoliticalPartyDTO;
-import uol.compass.avaliacao.config.dto.PoliticalPartyFormDTO;
-import uol.compass.avaliacao.config.dto.PoliticalPartyWithAssociatesDTO;
-import uol.compass.avaliacao.config.entities.Associate;
-import uol.compass.avaliacao.config.entities.PoliticalParty;
-import uol.compass.avaliacao.config.enums.Ideology;
-import uol.compass.avaliacao.config.exceptions.DefaultException;
-import uol.compass.avaliacao.config.repositories.PoliticalPartyRepository;
-import uol.compass.avaliacao.config.services.PoliticalPartyServiceImplementacao;
+import uol.compass.avaliacao.dto.PoliticalPartyDTO;
+import uol.compass.avaliacao.dto.PoliticalPartyFormDTO;
+import uol.compass.avaliacao.dto.PoliticalPartyWithAssociatesDTO;
+import uol.compass.avaliacao.entities.Associate;
+import uol.compass.avaliacao.entities.PoliticalParty;
+import uol.compass.avaliacao.enums.Ideology;
+import uol.compass.avaliacao.exceptions.DefaultException;
+import uol.compass.avaliacao.repositories.PoliticalPartyRepository;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)

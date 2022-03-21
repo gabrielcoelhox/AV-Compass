@@ -19,17 +19,16 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import uol.compass.avaliacao.builder.AssociateBuilder;
 import uol.compass.avaliacao.builder.PoliticalPartyBuilder;
-import uol.compass.avaliacao.config.dto.AssociateDTO;
-import uol.compass.avaliacao.config.dto.AssociateFormDTO;
-import uol.compass.avaliacao.config.dto.AssociatePoliticalPartyFormDTO;
-import uol.compass.avaliacao.config.entities.Associate;
-import uol.compass.avaliacao.config.entities.PoliticalParty;
-import uol.compass.avaliacao.config.enums.Ideology;
-import uol.compass.avaliacao.config.enums.PoliticalOffice;
-import uol.compass.avaliacao.config.exceptions.DefaultException;
-import uol.compass.avaliacao.config.repositories.AssociateRepository;
-import uol.compass.avaliacao.config.repositories.PoliticalPartyRepository;
-import uol.compass.avaliacao.config.services.AssociateServiceImplementacao;
+import uol.compass.avaliacao.dto.AssociateDTO;
+import uol.compass.avaliacao.dto.AssociateFormDTO;
+import uol.compass.avaliacao.dto.AssociatePoliticalPartyFormDTO;
+import uol.compass.avaliacao.entities.Associate;
+import uol.compass.avaliacao.entities.PoliticalParty;
+import uol.compass.avaliacao.enums.Ideology;
+import uol.compass.avaliacao.enums.PoliticalOffice;
+import uol.compass.avaliacao.exceptions.DefaultException;
+import uol.compass.avaliacao.repositories.AssociateRepository;
+import uol.compass.avaliacao.repositories.PoliticalPartyRepository;
 
 @SpringBootTest
 public class AssociateServiceTest {

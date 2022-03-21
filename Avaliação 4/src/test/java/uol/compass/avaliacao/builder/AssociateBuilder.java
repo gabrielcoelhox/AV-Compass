@@ -2,12 +2,12 @@ package uol.compass.avaliacao.builder;
 
 import java.time.LocalDate;
 
-import uol.compass.avaliacao.config.dto.AssociateDTO;
-import uol.compass.avaliacao.config.dto.AssociateFormDTO;
-import uol.compass.avaliacao.config.dto.AssociatePoliticalPartyFormDTO;
-import uol.compass.avaliacao.config.entities.Associate;
-import uol.compass.avaliacao.config.enums.PoliticalOffice;
-import uol.compass.avaliacao.config.enums.Sex;
+import uol.compass.avaliacao.dto.AssociateDTO;
+import uol.compass.avaliacao.dto.AssociateFormDTO;
+import uol.compass.avaliacao.dto.AssociatePoliticalPartyFormDTO;
+import uol.compass.avaliacao.entities.Associate;
+import uol.compass.avaliacao.enums.PoliticalOffice;
+import uol.compass.avaliacao.enums.Sex;
 
 public class AssociateBuilder {
 
